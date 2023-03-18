@@ -32,9 +32,15 @@ class DetailCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /* This is unused because we are going to use 'SafeArgs'
         // get 'arguments' passed by 'bundle' from 'CategoryFragment'
         val dataName = arguments?.getString(CategoryFragment.EXTRA_NAME)
-        val dataDesc = arguments?.getLong(CategoryFragment.EXTRA_STOCK)
+        val dataDesc = arguments?.getLong(CategoryFragment.EXTRA_STOCK)*/
+
+        // get 'arguments' by SafeArgs
+        // the 'arguments' need to be 'typecast' to 'Bundle', so it could be read using 'fromBundle()'
+        val dataName = DetailCategoryFragmentArgs.fromBundle(arguments as Bundle).name
+        val dataDesc = DetailCategoryFragmentArgs.fromBundle(arguments as Bundle).stock
 
         binding.tvCategoryName.text = dataName
         binding.tvCategoryDescription.text = "Stock: $dataDesc"

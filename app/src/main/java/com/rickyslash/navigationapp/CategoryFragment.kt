@@ -35,13 +35,23 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // send 'Bundle' on 'Button Click'
         binding.btnCategoryLifestyle.setOnClickListener { view ->
+
+            /* This is unused because we are going to use 'SafeArgs'
+            // send data using 'Bundle'
             val mBundle = Bundle()
             mBundle.putString(EXTRA_NAME, "Nike Airmax 270")
             mBundle.putLong(EXTRA_STOCK, 7)
-            view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
+            view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)*/
+
+            // send data using 'safeArgs'
+            val toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
+            toDetailCategoryFragment.name = "Nike Air Max 270"
+            toDetailCategoryFragment.stock = 7
+            view.findNavController().navigate(toDetailCategoryFragment)
+
         }
+
     }
 
     override fun onDestroy() {

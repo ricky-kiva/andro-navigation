@@ -11,7 +11,7 @@ import com.rickyslash.navigationapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    // 'make binding' for 'Fragment_Home' XML
+    // 'make binding' for 'fragment_home' XML
     // the default value of Fragment's 'binding' is null, before inflated
     private var _binding: FragmentHomeBinding? = null
     // 'get()' is Kotlin idiom that means it could 'get' a 'private' value (_binding)
