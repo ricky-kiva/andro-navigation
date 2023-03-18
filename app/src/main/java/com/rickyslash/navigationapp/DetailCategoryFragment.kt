@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.rickyslash.navigationapp.databinding.FragmentDetailCategoryBinding
 import java.util.zip.Inflater
 
@@ -44,6 +45,14 @@ class DetailCategoryFragment : Fragment() {
 
         binding.tvCategoryName.text = dataName
         binding.tvCategoryDescription.text = "Stock: $dataDesc"
+
+        // Button onClick to 'HomeFragment'
+        // So it works better, add 'Pop Up Behavior' on the XML Design tab
+        // 'Pop To' HomeFragment, and pick 'inclusive' (inside XML design tab)
+        binding.btnProfile.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_detailCategoryFragment_to_homeFragment)
+        )
+
     }
 
     // set '_binding' to null if the 'Fragment' is 'destroyed'
