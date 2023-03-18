@@ -48,3 +48,5 @@ class HomeFragment : Fragment() {
     }
 
 }
+
+// to add 'animation' click the 'action' (arrow) on 'main_navigation XML' then pick the animation
